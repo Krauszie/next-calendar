@@ -42,9 +42,5 @@ export async function middleware(req: NextRequest) {
 
 // Protect specific routes with the middleware
 export const config = {
-  matcher: [
-    "/login/dashboard/:path*",
-    "/todos/todos-page/:path*",
-    "/calendar/calendar-page/:path*",
-  ],
+  matcher: ["/todos/todos-page/:path*", "/calendar/calendar-page/:path*"],
 };
