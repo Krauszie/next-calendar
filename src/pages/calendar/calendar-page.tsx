@@ -30,7 +30,9 @@ const CalendarPage = ({ role }: UserItem) => {
   };
 
   const handleDateClick = (date: string) => {
-    setSelectedDate(date);
+    if (role === "admin") {
+      setSelectedDate(date);
+    }
   };
 
   const handleCloseModal = () => {
@@ -47,17 +49,19 @@ const CalendarPage = ({ role }: UserItem) => {
         onNext={handleNextMonth}
       />
       <CalendarDays currentDate={currentDate} onDateClick={handleDateClick} />
-      {selectedDate && (
+      {role === "admin" && selectedDate && (
         <EventModal date={selectedDate} onClose={handleCloseModal} />
       )}
       <div className="flex w-full">
         <div className="w-full max-w-[700px]">
           <EventList />
         </div>
-        <div className="flex-row mx-4 gap-4">
-          <PurgeEventsButton />
-          <LogoutButton />
-        </div>
+        {role === "admin" && (
+          <div className="flex-row mx-4 gap-4">
+            <PurgeEventsButton />
+            <LogoutButton />
+          </div>
+        )}
       </div>
     </div>
   );
