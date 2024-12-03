@@ -19,6 +19,10 @@ const links = [
     path: "/login/login-page",
   },
   {
+    name: "todos",
+    path: "/todos/todos-page",
+  },
+  {
     name: "calendar",
     path: "/calendar/calendar-page",
   },
