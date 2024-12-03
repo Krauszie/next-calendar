@@ -1,12 +1,10 @@
-"use client";
-
 import Image from "next/image";
 
 const Photo = () => {
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative flex justify-center items-center">
       {/* image */}
-      <div className="w-[298px] h-[265px] xl:w-[498px] xl:h-[450px] mix-blend-lighten absolute">
+      <div className="w-[298px] h-[265px] xl:w-[498px] xl:h-[450px] mix-blend-lighten absolute flex justify-center items-center">
         <Image
           src="/assets/Cat.png"
           priority
