@@ -56,12 +56,11 @@ const CalendarPage = ({ role }: UserItem) => {
         <div className="w-full max-w-[700px]">
           <EventList />
         </div>
-        {role === "admin" && (
-          <div className="flex-row mx-4 gap-4">
-            <PurgeEventsButton />
-            <LogoutButton />
-          </div>
-        )}
+
+        <div className="flex-row mx-4 gap-4">
+          {role === "admin" && <PurgeEventsButton />}
+          <LogoutButton />
+        </div>
       </div>
     </div>
   );

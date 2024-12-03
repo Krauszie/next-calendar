@@ -9,7 +9,6 @@ import {
   deleteTask,
   toggleTaskCompletion,
 } from "@/redux/slices/todo-slice";
-import Link from "next/link";
 import LogoutButton from "@/components/shared/logout-button";
 import { Button } from "@/components/ui/button";
 
@@ -36,14 +35,12 @@ const TodosPage = ({ role }: UserItem) => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center bg-primary py-12 px-4 sm:px-6 lg:px-8">
-      <div className="my-6">
-        <LogoutButton />
-      </div>
+    <div className="flex flex-col min-h-screen items-center justify-center bg-primary px-4 sm:px-6 lg:px-8">
+      <LogoutButton />
 
-      <div className="w-full max-w-md space-y-8 bg-white p-8 rounded-lg shadow-lg">
+      <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg mt-3">
         <h1 className="text-center font-bold text-3xl mb-6 text-accent">
-          TODO
+          TODO, Role: {role}
         </h1>
 
         <div className="flex gap-2 mb-6">
