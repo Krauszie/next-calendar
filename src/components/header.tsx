@@ -22,7 +22,7 @@ const Header = ({ pathname }: NavItem) => {
           <Nav pathname={pathname} />
         </div>
 
-        {/* mobile nav */}
+        {/* mobile nav WIP */}
         {/* <div className="xl:hidden">
           <MobileNav />
         </div> */}

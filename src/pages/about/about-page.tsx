@@ -87,8 +87,8 @@ const AboutPage = () => {
     <div className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0">
       <div className="container mx-auto">
         <Tabs
-          defaultValue="hobby"
-          className="flex flex-col xl:flex-row gap-[60px]"
+          defaultValue="about"
+          className="flex flex-col-reverse xl:flex-row gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w-[400px] mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="about">About</TabsTrigger>

@@ -1,4 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Next.js Portfolio Project
+
+This is a [Next.js](https://nextjs.org) project showcasing a personal portfolio with various features built using modern web technologies.
+
+## Key Features
+
+### 🛡️ Authentication System
+
+- Secure JWT-based authentication
+- Role-based access control (user/admin)
+- Protected routes with middleware
+- Cookie-based session management
+- Login/Logout functionality
+
+### 📅 Calendar & Event Management
+
+- Interactive calendar view
+- Add/Edit/Delete events
+- Event validation and limits
+- Persisted event storage
+- Date-based event organization
+
+### ✅ Todo List
+
+- Create, Read, Update, Delete tasks
+- Task completion tracking
+- Redux-powered state management
+- Persistent storage
+
+### 👤 About Me Section
+
+- Personal information display
+- Language proficiency
+- Hobbies and interests
+- Responsive design
+
+### 🎨 UI Components
+
+- Custom-built components using Radix UI
+- Tailwind CSS for styling
+- Includes:
+  - Buttons
+  - Tabs
+  - Modals
+  - Inputs
+  - Selects
+  - Scroll areas
+
+## Technical Stack
+
+- **Framework**: Next.js 15
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **State Management**: Redux Toolkit with Persist
+- **UI Library**: Radix UI
+- **Icons**: Lucide React
 
 ## Getting Started
 
@@ -16,13 +71,21 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── components/       # Reusable UI components
+├── pages/            # Application pages
+│   ├── api/          # API routes
+│   ├── about/        # About page
+│   ├── calendar/     # Calendar features
+│   ├── todos/        # Todo list
+│   └── login/        # Authentication
+├── redux/            # State management
+├── styles/           # Global styles
+└── types/            # TypeScript types
+```
 
 ## Learn More
 

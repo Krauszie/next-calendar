@@ -55,26 +55,32 @@ const LoginPage = ({ onLoginSuccess }: LoginFormProps) => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-primary">
-      <h1 className="text-2xl font-bold mb-4 text-tertiary">Log1(n) = -1</h1>
+      <h1 className="text-2xl font-bold mb-4 text-tertiary">
+        Log<sub>1</sub>(n) = -1
+      </h1>
       <form
         onSubmit={handleLogin}
         className="bg-white p-6 rounded shadow-md w-80"
       >
         <div className="mb-4">
-          <label className="block mb-1 font-medium">Email:</label>
+          <label className="block mb-1 font-medium text-primary">Email:</label>
           <input
-            className="w-full px-3 py-2 border rounded text-primary focus:outline-none focus:ring-2 focus:ring-accent"
+            className="w-full px-3 py-2 border rounded placeholder-primary text-primary focus:outline-none focus:ring-2 focus:ring-accent"
             type="email"
+            placeholder="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
         <div className="mb-4">
-          <label className="block mb-1 font-medium">Password:</label>
+          <label className="block mb-1 font-medium text-primary">
+            Password:
+          </label>
           <input
-            className="w-full px-3 py-2 border rounded text-primary focus:outline-none focus:ring-2 focus:ring-accent"
+            className="w-full px-3 py-2 border rounded placeholder-primary text-primary focus:outline-none focus:ring-2 focus:ring-accent"
             type="password"
+            placeholder="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required

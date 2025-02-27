@@ -24,13 +24,11 @@ const TodosPage = ({ role }: UserItem) => {
   console.log("ROLE", role);
 
   const handleAddTask = () => {
-    if (role === "admin") {
-      // Note: trim become var
-      const trimVar = todoTitle.trim();
-      if (trimVar) {
-        dispatch(addTask(trimVar));
-        setTodoTitle("");
-      }
+    // Note: trim become var
+    const trimVar = todoTitle.trim();
+    if (trimVar) {
+      dispatch(addTask(trimVar));
+      setTodoTitle("");
     }
   };
 
@@ -43,25 +41,20 @@ const TodosPage = ({ role }: UserItem) => {
           TODO, Role: {role}
         </h1>
 
-        <div className="flex gap-2 mb-6">
-          <input
-            type="text"
-            value={todoTitle}
-            onChange={(e) => setTodoTitle(e.target.value)}
-            placeholder="Add a task"
-            className="flex-1 p-1 lg:p-2 border border-gray-300 text-primary placeholder:text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
-          />
-          {role === "admin" && (
+        {role === "admin" && (
+          <div className="flex gap-2 mb-6">
+            <input
+              type="text"
+              value={todoTitle}
+              onChange={(e) => setTodoTitle(e.target.value)}
+              placeholder="Add a task"
+              className="flex-1 p-1 lg:p-2 border border-gray-300 text-primary placeholder:text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
+            />
             <Button variant="outline" onClick={handleAddTask}>
               Add Task
             </Button>
-          )}
-          {role === "user" && (
-            <Button disabled onClick={handleAddTask}>
-              Add Task
-            </Button>
-          )}
-        </div>
+          </div>
+        )}
 
         <ul className="space-y-4">
           {todos.map((todo) => (
@@ -112,14 +105,14 @@ const TodosPage = ({ role }: UserItem) => {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   // Retrieving the roles from cookies (IDK if its from header)
   const role = ctx.req.cookies.role || null;
-  if (!role) {
-    return {
-      redirect: {
-        destination: "/login/login-page",
-        permanent: false,
-      },
-    };
-  }
+  // if (!role) {
+  //   return {
+  //     redirect: {
+  //       destination: "/login/login-page",
+  //       permanent: false,
+  //     },
+  //   };
+  // }
 
   return {
     props: { role }, // Pass role to component
